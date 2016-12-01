@@ -21,7 +21,10 @@ class Player
   end
 
   define_method(:has_card?) do |card|
-    @player_hand.include?(card)
-
+     while @player_hand.include?(card)
+       i = @player_hand.index(card)
+       @player_hand.slice!(i) # returns card lost
+     end
   end
+
 end

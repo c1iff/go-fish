@@ -22,4 +22,7 @@ describe(Player) do
       expect(test_player.has_card?('Ace of Spades')).to(eq(true))
     end
   end
+
+  
+
 end
