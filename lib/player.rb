@@ -15,4 +15,13 @@ class Player
    @@players.push(self)
   end
 
+  # For testing purposes
+  define_method(:set_hand) do |hand|
+    @player_hand = hand
+  end
+
+  define_method(:has_card?) do |card|
+    @player_hand.include?(card)
+
+  end
 end

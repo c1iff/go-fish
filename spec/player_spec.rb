@@ -13,4 +13,13 @@ describe(Player) do
     end
   end
 
+  describe('#has_card?') do
+    it('Returns the current hand for the player') do
+      test_game = Game.new()
+      test_player = Player.new()
+      test_player.save()
+      test_player.set_hand(['Ace of Spades', '2 of Hearts', 'King of Dimonds'])
+      expect(test_player.has_card?('Ace of Spades')).to(eq(true))
+    end
+  end
 end
