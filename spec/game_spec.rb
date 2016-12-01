@@ -10,4 +10,12 @@ describe(Game) do
     end
   end
 
+  describe('#deal') do
+    it('deals 7 cars to player') do
+      test_game = Game.new()
+      test_game.deal()
+      expect(test_game.game_deck.length).to(eq(45))
+    end
+  end
+
 end
