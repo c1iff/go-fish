@@ -23,6 +23,7 @@ class Game
     7.times do
       @game_deck.shift()
     end
+    players_cards
   end
 
   define_method(:shuffle_deck) do |deck|
