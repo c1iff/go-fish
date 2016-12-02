@@ -23,19 +23,21 @@ class Player
   end
 
   define_method(:has_card?) do |value|
-      @player_hand.each() do |index|
-       if index.include?(value)
-         i = (@player_hand.index(/#{Regexp.escape(value)}/)).to_i
-         @player_hand.slice!(i) # returns card lost
-       end
+    had_card = []
+    i = 0
+    @player_hand.each() do |index|
+     if index.include?(value)
+       print "i: ", i
+       had_card.push(@player_hand.slice!(i)) # returns card lost
      end
-  end
+     i += 1
+   end
+   puts "had_card: ", had_card
+end
 
 end
 
 test_game = Game.new()
 test_player = Player.new()
-test_player.set_hand(['Ace of Spades', '2 of Hearts', 'King of Dimonds'])
-puts "hand before: ", test_player.player_hand()
+test_player.set_hand(['Ace of Spades', '2 of Hearts', 'King of Dimonds', 'Ace of Diamonds'])
 puts test_player.has_card?('Ace')
-puts "hand after: ", test_player.player_hand()
