@@ -19,10 +19,10 @@ describe(Player) do
       test_player = Player.new()
       test_player.save()
       test_player.set_hand(['Ace of Spades', '2 of Hearts', 'King of Dimonds'])
-      expect(test_player.has_card?('Ace of Spades')).to(eq(true))
+      expect(test_player.has_card?('Ace')).to(eq('Ace of Spades'))
     end
   end
 
-  
+
 
 end
